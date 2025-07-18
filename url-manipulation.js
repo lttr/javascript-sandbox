@@ -23,15 +23,15 @@ const objectExampleFullPathSlash = new URL(`${exampleFullPath}/`)
 
 console.log()
 console.log(
-  `'origin' does not contain trailing slash: '${objectExampleUrlSlash.origin}'`
+  `'origin' does not contain trailing slash: '${objectExampleUrlSlash.origin}'`,
 )
 console.log(
-  `'pathname' contains leading slash and trailing slash if it was provided: '${objectExampleFullPathSlash.pathname}'`
+  `'pathname' contains leading slash and trailing slash if it was provided: '${objectExampleFullPathSlash.pathname}'`,
 )
 
 console.log()
 console.log(
-  "Any extra or missing slashes between path and url base will be normalized:"
+  "Any extra or missing slashes between path and url base will be normalized:",
 )
 console.log(new URL(examplePath, exampleUrl).href)
 console.log(new URL(exampleSlashPath, exampleUrl).href)
@@ -42,15 +42,15 @@ console.log()
 console.log("Concatenation of a path with base url:")
 console.log(new URL("bar", exampleFullPathSlash).href)
 console.log(
-  "You have to make sure, that the last segment of the base ends with slash if it is meant to be not only a domain:"
+  "You have to make sure, that the last segment of the base ends with slash if it is meant to be not only a domain:",
 )
 console.log(
-  new URL("bar", makeSureThatSlashIsAtTheEnd(exampleFullPathWithQuery)).href
+  new URL("bar", makeSureThatSlashIsAtTheEnd(exampleFullPathWithQuery)).href,
 )
 console.log("Otherwise, it will be one level above!")
 console.log(new URL("bar", exampleFullPath).href)
 console.log(
-  "The first argument to URL constructor has to be relative path, not absolute like '/bar':"
+  "The first argument to URL constructor has to be relative path, not absolute like '/bar':",
 )
 console.log(new URL("/bar", exampleFullPathSlash).href)
 
@@ -58,7 +58,9 @@ function makeSureThatSlashIsAtTheEnd(url) {
   const objectUrl = new URL(url)
   objectUrl.pathname = objectUrl.pathname.replace(/\/?$/, "/")
   console.log(
-    `...making sure that url's ${url} path segment ends with a slash: ${objectUrl}`
+    `...making sure that url's ${url} path segment ends with a slash: ${objectUrl}`,
   )
   return objectUrl.toString()
 }
+
+console.log("URLSearchParams")

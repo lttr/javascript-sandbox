@@ -2,13 +2,13 @@ const LOCALE = "cs"
 
 function namesOfWeekdays() {
   return Array.from(Array(7), (_, i) =>
-    new Date(0, i).toLocaleDateString(LOCALE, { weekday: "long" })
+    new Date(0, i).toLocaleDateString(LOCALE, { weekday: "long" }),
   )
 }
 
 function namesOfMonths() {
   return Array.from(Array(12), (_, i) =>
-    new Date(0, i).toLocaleDateString(LOCALE, { month: "long" })
+    new Date(0, i).toLocaleDateString(LOCALE, { month: "long" }),
   )
 }
 
@@ -21,5 +21,5 @@ console.log(namesOfWeekdays())
 console.log(namesOfMonths())
 
 console.log(
-  ["minute", "hour", "day", "month", "year"].map(localizeDateTimeField)
+  ["minute", "hour", "day", "month", "year"].map(localizeDateTimeField),
 )
